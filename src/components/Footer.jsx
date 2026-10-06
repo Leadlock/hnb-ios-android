@@ -46,8 +46,8 @@ function FooterSlim() {
 export default function Footer() {
   const year = new Date().getFullYear()
 
-  // Native app: no social icons or service sitemap — just legal + contact info
-  if (Capacitor.isNativePlatform()) return <FooterSlim />
+  // Completely removed on native iOS/Android apps for a clean native look
+  if (Capacitor.isNativePlatform()) return null
 
   return (
     <footer className="footer">
