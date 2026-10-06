@@ -15,19 +15,18 @@ export const isNativePlatform = () => {
  * In web browsers, this safely no-ops with zero side-effects.
  * @param {'light'|'medium'|'heavy'|'success'|'warning'|'selection'} type
  */
-export const triggerHaptic = async (type = 'light') => {
-  if (!isNativePlatform()) return
-
+export const triggerHaptic = async (type = 'medium') => {
   try {
     switch (type) {
       case 'selection':
-        await Haptics.selectionChanged()
-        break
       case 'medium':
         await Haptics.impact({ style: ImpactStyle.Medium })
         break
       case 'heavy':
         await Haptics.impact({ style: ImpactStyle.Heavy })
+        break
+      case 'light':
+        await Haptics.impact({ style: ImpactStyle.Light })
         break
       case 'success':
         await Haptics.notification({ type: NotificationType.Success })
@@ -35,13 +34,18 @@ export const triggerHaptic = async (type = 'light') => {
       case 'warning':
         await Haptics.notification({ type: NotificationType.Warning })
         break
-      case 'light':
       default:
-        await Haptics.impact({ style: ImpactStyle.Light })
+        await Haptics.impact({ style: ImpactStyle.Medium })
         break
     }
-  } catch {
-    // Graceful fallback if haptics unavailable on device
+  } catch (e) {
+    try {
+      await Haptics.vibrate({ duration: 40 })
+    } catch {
+      if (typeof navigator !== 'undefined' && navigator.vibrate) {
+        try { navigator.vibrate(40) } catch {}
+      }
+    }
   }
 }
 
