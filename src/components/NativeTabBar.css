@@ -58,22 +58,294 @@
 }
 
 .tab-item.active .tab-icon {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.08);
 }
 
 .tab-item.active .tab-label {
   font-weight: 700;
 }
 
-/* Support action tab */
-.tab-item--action {
-  color: #10b981;
-}
-.tab-item--action:active {
-  transform: scale(0.94);
+/* -------------------------------------------------------------
+   Native "Connect & Support" Bottom Action Sheet Modal
+------------------------------------------------------------- */
+.native-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 13, 32, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9990;
+  animation: fadeInBackdrop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Dark mode / Dark hero contrast support if needed */
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.native-sheet-container {
+  position: fixed;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -10px 40px rgba(5, 13, 32, 0.16);
+  z-index: 9995;
+  padding: 12px 20px 24px;
+  transform: translateY(110%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 80vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.native-sheet-container.open {
+  transform: translateY(0);
+}
+
+.native-sheet-handle-area {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 12px;
+  cursor: pointer;
+}
+
+.native-sheet-handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 99px;
+  background: #cbd5e1;
+}
+
+.native-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 16px;
+}
+
+.native-sheet-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.native-sheet-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.native-sheet-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.01em;
+}
+
+.native-sheet-subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+.native-sheet-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.native-sheet-close:active {
+  background: #e2e8f0;
+}
+
+/* Action Grid (WhatsApp, Phone, Email, Maps) */
+.native-sheet-section {
+  margin-bottom: 18px;
+}
+
+.native-sheet-heading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin: 0 0 10px 0;
+}
+
+.native-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.sheet-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.sheet-btn:active {
+  transform: scale(0.97);
+}
+
+.sheet-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.sheet-btn--whatsapp .sheet-btn-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+.sheet-btn--phone .sheet-btn-icon {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+.sheet-btn--mail .sheet-btn-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+.sheet-btn--maps .sheet-btn-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.sheet-btn-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sheet-btn-info strong {
+  font-size: 13px;
+  color: #0f172a;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sheet-btn-info span {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Social Media Pills */
+.native-social-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 8px;
+  border-radius: 12px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.social-pill:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.social-pill--instagram {
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
+
+.social-pill--facebook {
+  background: #1877f2;
+}
+
+.social-pill--youtube {
+  background: #ff0000;
+}
+
+/* Footer / Legal Links */
+.native-sheet-footer {
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.native-sheet-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.native-sheet-links button {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.native-sheet-links button:active {
+  color: var(--blue, #1F5FFF);
+}
+
+.native-sheet-links span {
+  color: #cbd5e1;
+  font-size: 10px;
+}
+
+.native-sheet-copy {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Dark Mode Theme Support */
 @media (prefers-color-scheme: dark) {
   .native-tab-bar {
     background: rgba(15, 23, 42, 0.94);
@@ -85,5 +357,42 @@
   }
   .tab-item.active {
     color: #38bdf8;
+  }
+  
+  .native-sheet-container {
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .native-sheet-handle {
+    background: #334155;
+  }
+  .native-sheet-header {
+    border-bottom: 1px solid #1e293b;
+  }
+  .native-sheet-title {
+    color: #f8fafc;
+  }
+  .native-sheet-subtitle {
+    color: #94a3b8;
+  }
+  .native-sheet-close {
+    background: #1e293b;
+    color: #cbd5e1;
+  }
+  .sheet-btn {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  .sheet-btn-info strong {
+    color: #f8fafc;
+  }
+  .sheet-btn-info span {
+    color: #94a3b8;
+  }
+  .native-sheet-footer {
+    border-top: 1px solid #1e293b;
+  }
+  .native-sheet-links button {
+    color: #94a3b8;
   }
 }
