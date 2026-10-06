@@ -1,0 +1,379 @@
+/* ── Hero ── */
+.fr-hero {
+  position: relative;
+  padding: 130px 0 80px;
+  overflow: hidden;
+}
+.fr-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a1628 0%, #0f2460 55%, #1a3ab8 100%);
+  z-index: 0;
+}
+.fr-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(99,102,241,0.18) 0%, transparent 70%);
+}
+.fr-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.fr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34,197,94,0.15);
+  border: 1px solid rgba(34,197,94,0.35);
+  color: #4ade80;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 50px;
+  margin-bottom: 28px;
+}
+.fr-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.3);
+  flex-shrink: 0;
+}
+
+.fr-hero-title {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+.fr-hero-title span { color: #93c5fd; }
+
+.fr-hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 44px;
+}
+
+.fr-hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.fr-stat-num {
+  display: block;
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.fr-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Why Partner ── */
+.fr-perks-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+.fr-perks-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+.fr-perks-title span { color: var(--blue, #1f5fff); }
+.fr-perks-sub {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 44px;
+}
+.fr-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.fr-perk-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border: 1.5px solid #f1f5f9;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fr-perk-card:hover {
+  border-color: #c7d7ff;
+  box-shadow: 0 8px 28px rgba(31,95,255,0.09);
+}
+.fr-perk-icon {
+  width: 48px; height: 48px;
+  background: #eef2ff;
+  color: var(--blue, #1f5fff);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.fr-perk-card h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+.fr-perk-card p {
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ── Form Section ── */
+.fr-form-section {
+  padding: 80px 0 100px;
+  background: #fff;
+}
+.fr-form-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  border: 1.5px solid #e5e7eb;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+.fr-form-header {
+  padding: 36px 40px 28px;
+  background: linear-gradient(135deg, #0f2460, #1a3ab8);
+}
+.fr-form-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.fr-form-header h2 span { color: #93c5fd; }
+.fr-form-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.fr-form {
+  padding: 32px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fr-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.fr-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.fr-group-half {
+  max-width: calc(50% - 10px);
+}
+.fr-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+.fr-label-plain {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+.fr-req { color: #ef4444; margin-left: 1px; }
+
+.fr-group input {
+  border: none;
+  border-bottom: 1.5px solid #d1d5db;
+  padding: 10px 2px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.fr-group input:focus { border-color: var(--blue, #1f5fff); }
+.fr-group input.error { border-color: #ef4444; }
+.fr-group input::placeholder { color: #9ca3af; }
+
+.fr-select-wrap {
+  position: relative;
+}
+.fr-select-wrap select {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #d1d5db;
+  padding: 10px 24px 10px 2px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: transparent;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.fr-select-wrap select:focus { border-color: var(--blue, #1f5fff); }
+.fr-select-wrap select.error { border-color: #ef4444; }
+.fr-select-wrap select:disabled { color: #9ca3af; cursor: not-allowed; }
+.fr-select-arrow {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+}
+
+.fr-err {
+  font-size: 12px;
+  color: #ef4444;
+}
+.fr-form-error {
+  font-size: 13px;
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+/* Radios */
+.fr-radios {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.fr-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+}
+.fr-radio input[type="radio"] { display: none; }
+.fr-radio-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+.fr-radio input[type="radio"]:checked ~ .fr-radio-dot {
+  border-color: var(--blue, #1f5fff);
+  background: var(--blue, #1f5fff);
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Submit */
+.fr-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 15px;
+  background: var(--blue, #1f5fff);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s, transform 0.15s;
+}
+.fr-submit-btn:hover { background: #1649d6; transform: translateY(-1px); }
+
+/* Success */
+.fr-success {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.fr-success-icon {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fr-success h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+}
+.fr-success p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.65;
+  max-width: 380px;
+}
+.fr-success .fr-submit-btn { width: auto; padding: 13px 32px; margin-top: 8px; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .fr-perks-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .fr-form-wrap { border-radius: 16px; }
+  .fr-form-header { padding: 28px 24px 22px; }
+  .fr-form { padding: 24px 24px 32px; }
+  .fr-row { grid-template-columns: 1fr; }
+  .fr-group-half { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .fr-hero { padding: 110px 0 60px; }
+  .fr-perks-grid { grid-template-columns: 1fr; }
+  .fr-radios { gap: 16px; flex-direction: column; }
+}
+
+/* ── Spinner ── */
+.fr-submit-btn { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.fr-submit-btn:disabled { opacity: 0.75; cursor: not-allowed; }
+
+.fr-btn-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: fr-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes fr-spin { to { transform: rotate(360deg); } }

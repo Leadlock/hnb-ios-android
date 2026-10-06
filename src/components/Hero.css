@@ -1,0 +1,215 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0 100px;
+}
+
+/* Background slides */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  z-index: 0;
+}
+.hero-bg.active {
+  opacity: 1;
+}
+
+/* Overlay: dark left-to-right fade + white bottom fade */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 35, 0.75) 0%,
+    rgba(5, 15, 35, 0.45) 50%,
+    rgba(5, 15, 35, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+/* White fade from bottom */
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.55) 30%,
+    rgba(255, 255, 255, 0) 60%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 560px;
+  color: white;
+  margin-left: 0;
+}
+
+/* Badge — pinned to top of hero */
+.hero-badge-wrap {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 7px 16px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #1a3a8f;
+}
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+/* Title */
+.hero-title {
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Description */
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+  max-width: 460px;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideOutUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-20px); }
+}
+.slide-in  { animation: slideInUp  0.5s ease both; }
+.slide-out { animation: slideOutUp 0.4s ease both; }
+
+/* Buttons */
+.hero-bottom {
+  position: absolute;
+  bottom: 90px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #22c55e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+}
+.btn-hero-primary:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.5);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 25, 80, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(100, 140, 255, 0.45);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-hero-secondary:hover {
+  background: rgba(10, 25, 80, 0.72);
+  border-color: rgba(100, 140, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+
+/* Wave */
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 2;
+}
+.hero-wave svg { width: 100%; height: 100%; }
+
+@media (max-width: 768px) {
+  .hero { padding: 100px 0 80px; }
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(5, 15, 35, 0.75) 0%,
+      rgba(5, 15, 35, 0.45) 50%,
+      rgba(5, 15, 35, 0.05) 100%
+    );
+  }
+  .hero-content { max-width: 100%; }
+  .hero-desc { margin-left: 0; margin-right: 0; }
+  .hero-actions { justify-content: flex-start; }
+}
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn-hero-primary, .btn-hero-secondary { justify-content: center; }
+}

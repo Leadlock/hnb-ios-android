@@ -1,0 +1,75 @@
+.services-section {
+  padding: 80px 0;
+  background: var(--bg);
+}
+.section-head { margin-bottom: 48px; }
+.sc-carousel { display: flex; flex-direction: column; align-items: center; gap: 36px; }
+
+/* Sliding track */
+.sc-track-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.sc-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sc-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Nav */
+.sc-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sc-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-200);
+  background: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-700);
+  transition: border-color 0.2s, color 0.2s;
+}
+.sc-arrow:hover { border-color: var(--blue); color: var(--blue); }
+.sc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s;
+}
+.sc-dot.active {
+  background: var(--blue);
+  width: 28px;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) { .sc-slide { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+
+/* On mobile: unfold carousel — show all services in a vertical scroll, no pagination */
+@media (max-width: 640px) {
+  .sc-track-wrap { overflow: visible; }
+  .sc-track {
+    flex-direction: column;
+    transform: none !important;
+    gap: 16px;
+  }
+  .sc-slide {
+    min-width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .sc-nav { display: none; }
+}

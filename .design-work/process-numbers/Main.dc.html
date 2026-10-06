@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1F5FFF;
+      --teal: #00C4CC;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    a { color: var(--blue); }
+    a:hover { color: #1449CC; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--gray-50);
+    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .section-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(31,95,255,0.1), rgba(0,196,204,0.1));
+      color: var(--blue);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.2;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sp-process-sec { background: var(--gray-50); padding: 64px 0; }
+    .section-head { text-align: center; margin-bottom: 36px; }
+    .sp-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .sp-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 20px;
+      padding-right: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.2s;
+      overflow: hidden;
+      min-height: 92px;
+    }
+    .sp-step:hover {
+      box-shadow: 0 6px 20px rgba(31,95,255,0.10);
+      transform: translateY(-2px);
+    }
+    .sp-step-icon-placeholder {
+      position: relative;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      border: 1.5px dashed var(--gray-300);
+      background: var(--gray-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sp-step-icon-placeholder svg { width: 20px; height: 20px; color: var(--gray-400); }
+    .sp-step-body {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      min-width: 0;
+      padding-right: 46px;
+    }
+    .sp-step-title { font-size: 13px; font-weight: 700; color: var(--gray-800); margin-bottom: 6px; line-height: 1.4; }
+    .sp-step-desc { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+    .sp-step-num {
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 0;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-mask-image: linear-gradient(135deg, black 12%, black 38%, transparent 88%);
+      mask-image: linear-gradient(135deg, black 12%, black 38%, transparent 88%);
+      pointer-events: none;
+      user-select: none;
+    }
+    @media (max-width: 968px) {
+      .sp-process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .sp-process-grid { grid-template-columns: 1fr; }
+      .sp-step-body { padding-right: 34px; }
+    }
+  </style>
+</helmet>
+
+<section class="sp-process-sec">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Our Process</div>
+      <h2 class="section-title">How We <span class="gradient-text">Handle Your Items</span></h2>
+    </div>
+
+    <div class="sp-process-grid">
+      <sc-for list="{{steps}}" as="step" hint-placeholder-count="9">
+        <div class="sp-step">
+          <div class="sp-step-icon-placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <div class="sp-step-body">
+            <p class="sp-step-title">{{step.title}}</p>
+            <p class="sp-step-desc">{{step.desc}}</p>
+          </div>
+          <span class="sp-step-num" style="font-size: {{numberSizeStr}}">{{step.n}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script data-dc-script data-props='{"numberSize":{"editor":"range","default":88,"min":56,"max":128,"step":4,"unit":"px","section":"Style"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      { title: 'Booking',             desc: 'Schedule via WhatsApp, Call or App.' },
+      { title: 'Home Pickup',         desc: 'Secure collection of footwear.' },
+      { title: 'Material Assessment', desc: 'Identifying leather, suede, or canvas.' },
+      { title: 'Prep Work',           desc: 'Removal of laces and insoles.' },
+      { title: 'Sole Scrub',          desc: 'High-friction brushing for mud/grime.' },
+      { title: 'Upper Treatment',     desc: 'Hand-brushing delicate materials.' },
+      { title: 'Deodorizing',         desc: 'Antibacterial spray treatment.' },
+      { title: 'Condition & Polish',  desc: 'Restoring shine and suppleness.' },
+      { title: 'Delivery',            desc: 'Ready-to-wear shoes delivered.' },
+    ];
+    const numberSize = this.props.numberSize ?? 88;
+    return {
+      numberSizeStr: `${numberSize}px`,
+      steps: raw.map((s, i) => ({ ...s, n: i + 1 })),
+    };
+  }
+}
+</script>
+</body>
+</html>

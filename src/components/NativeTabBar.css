@@ -1,0 +1,89 @@
+.native-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(56px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 9999;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.04);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-item {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tab-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* Active tab style */
+.tab-item.active {
+  color: var(--blue, #1F5FFF);
+}
+
+.tab-item.active .tab-icon {
+  transform: translateY(-1px);
+}
+
+.tab-item.active .tab-label {
+  font-weight: 700;
+}
+
+/* Support action tab */
+.tab-item--action {
+  color: #10b981;
+}
+.tab-item--action:active {
+  transform: scale(0.94);
+}
+
+/* Dark mode / Dark hero contrast support if needed */
+@media (prefers-color-scheme: dark) {
+  .native-tab-bar {
+    background: rgba(15, 23, 42, 0.94);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+  }
+  .tab-item {
+    color: #94a3b8;
+  }
+  .tab-item.active {
+    color: #38bdf8;
+  }
+}

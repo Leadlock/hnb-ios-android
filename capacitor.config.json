@@ -1,0 +1,14 @@
+{
+  "appId": "com.hangersandbaskets.app",
+  "appName": "Hangers & Basket",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "StatusBar": {
+      "style": "DARK"
+    }
+  }
+}

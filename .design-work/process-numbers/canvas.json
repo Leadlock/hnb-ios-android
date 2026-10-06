@@ -1,0 +1,9 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1280, "h": 900, "expand": "fill" }
+  ],
+  "annotations": [
+    { "id": "brief-note", "x": 1320, "y": 0, "w": 260, "text": "Numbers moved to the right, bigger + gradient blue + fading into the corner (135deg, matching the site's gradient-text angle).\n\nLeft icon slots are dashed placeholders for now — swap in the real SVGs per step when ready.\n\nUse the \"numberSize\" tweak above the artboard to dial in exactly how big the numerals should read." }
+  ],
+  "launch": { "view": "focused", "file": "Main.dc.html" }
+}

@@ -1,0 +1,30 @@
+{
+  "banner": {
+    "title": "Folosim cookie-uri",
+    "description": "Folosim cookie-uri pentru a opera serviciile noastre, a vă menține autentificat și a vă îmbunătăți experiența. Vă puteți gestiona preferințele mai jos.",
+    "accept_all": "Acceptați toate",
+    "reject_all": "Respingeți toate",
+    "manage": "Gestionați preferințele",
+    "privacy_link": "Politica de confidențialitate"
+  },
+  "preferences": {
+    "title": "Preferințe cookie-uri",
+    "save": "Salvați preferințele",
+    "strictly_necessary": {
+      "label": "Strict necesare",
+      "description": "Necesare pentru funcționarea site-ului. Nu pot fi dezactivate."
+    },
+    "functional": {
+      "label": "Funcționale",
+      "description": "Permite funcții îmbunătățite, cum ar fi reținerea setărilor dvs."
+    },
+    "analytics": {
+      "label": "Analitice",
+      "description": "Ne ajută să înțelegem cum utilizați site-ul pentru a-l îmbunătăți."
+    },
+    "marketing": {
+      "label": "Marketing",
+      "description": "Folosit pentru a afișa reclame relevante și a urmări campaniile."
+    }
+  }
+}

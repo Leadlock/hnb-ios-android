@@ -1,0 +1,30 @@
+{
+  "banner": {
+    "title": "Vi använder cookies",
+    "description": "Vi använder cookies för att driva våra tjänster, hålla dig inloggad och förbättra din upplevelse. Du kan hantera dina inställningar nedan.",
+    "accept_all": "Acceptera alla",
+    "reject_all": "Avvisa alla",
+    "manage": "Hantera inställningar",
+    "privacy_link": "Integritetspolicy"
+  },
+  "preferences": {
+    "title": "Cookie-inställningar",
+    "save": "Spara inställningar",
+    "strictly_necessary": {
+      "label": "Strikt nödvändiga",
+      "description": "Krävs för att webbplatsen ska fungera. Kan inte inaktiveras."
+    },
+    "functional": {
+      "label": "Funktionella",
+      "description": "Möjliggör förbättrade funktioner som att komma ihåg dina inställningar."
+    },
+    "analytics": {
+      "label": "Analytiska",
+      "description": "Hjälper oss förstå hur du använder webbplatsen för att förbättra den."
+    },
+    "marketing": {
+      "label": "Marknadsföring",
+      "description": "Används för att visa relevanta annonser och spåra kampanjer."
+    }
+  }
+}
