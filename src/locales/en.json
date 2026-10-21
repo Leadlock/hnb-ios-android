@@ -1,9 +1,9 @@
 {
   "banner": {
     "title": "We use cookies",
-    "description": "We use cookies to operate our services, keep you signed in, and improve your experience. You can manage your preferences below.",
+    "description": "We use essential cookies to operate our services, keep you signed in, and improve your experience. You can manage your preferences below.",
     "accept_all": "Accept All",
-    "reject_all": "Reject All",
+    "reject_all": "Reject Optional",
     "manage": "Manage Preferences",
     "privacy_link": "Privacy Policy"
   },
@@ -12,19 +12,19 @@
     "save": "Save Preferences",
     "strictly_necessary": {
       "label": "Strictly Necessary",
-      "description": "Required for the site to function. Cannot be disabled."
+      "description": "Required for the app and account features to function properly. Cannot be disabled."
     },
     "functional": {
       "label": "Functional",
-      "description": "Enables enhanced features like remembering your settings."
+      "description": "Enables enhanced features like remembering your language and location settings."
     },
     "analytics": {
-      "label": "Analytics",
-      "description": "Helps us understand how you use the site to improve it."
+      "label": "Performance & Analytics",
+      "description": "Helps us understand overall app performance and service usability without tracking across third-party apps."
     },
     "marketing": {
-      "label": "Marketing",
-      "description": "Used to show relevant advertisements and track campaigns."
+      "label": "Promotions & Offers",
+      "description": "Used to show relevant in-app promotions and service discounts. No cross-app tracking is performed."
     }
   }
 }

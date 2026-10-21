@@ -3,7 +3,7 @@
     "title": "Nous utilisons des cookies",
     "description": "Nous utilisons des cookies pour faire fonctionner nos services, vous maintenir connecté et améliorer votre expérience. Vous pouvez gérer vos préférences ci-dessous.",
     "accept_all": "Tout accepter",
-    "reject_all": "Tout refuser",
+    "reject_all": "Refuser les optionnels",
     "manage": "Gérer les préférences",
     "privacy_link": "Politique de confidentialité"
   },
@@ -12,19 +12,19 @@
     "save": "Enregistrer les préférences",
     "strictly_necessary": {
       "label": "Strictement nécessaires",
-      "description": "Requis pour le fonctionnement du site. Ne peut pas être désactivé."
+      "description": "Requis pour le fonctionnement de l'application. Ne peut pas être désactivé."
     },
     "functional": {
       "label": "Fonctionnels",
       "description": "Permet des fonctionnalités améliorées comme la mémorisation de vos paramètres."
     },
     "analytics": {
-      "label": "Analytiques",
-      "description": "Nous aide à comprendre comment vous utilisez le site pour l'améliorer."
+      "label": "Performance et analyses",
+      "description": "Nous aide à comprendre les performances de l'application sans suivi inter-applications."
     },
     "marketing": {
-      "label": "Marketing",
-      "description": "Utilisé pour afficher des publicités pertinentes et suivre les campagnes."
+      "label": "Promotions et offres",
+      "description": "Utilisé pour afficher des offres pertinentes dans l'application. Aucun suivi inter-applications."
     }
   }
 }
