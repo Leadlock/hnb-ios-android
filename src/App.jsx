@@ -10,6 +10,7 @@ import AllServicesPage from './pages/AllServicesPage'
 import JobsPage from './pages/JobsPage'
 import FranchisePage from './pages/FranchisePage'
 import DataDash from './pages/DataDash'
+import SocialsPage from './pages/SocialsPage'
 import ServicesTicker from './components/ServicesTicker'
 import NativeTabBar from './components/NativeTabBar'
 import CookieConsentBanner from './components/CookieConsentBanner'
@@ -18,7 +19,17 @@ import { isNativePlatform, initNativeListeners } from './utils/native'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    // Keep canonical in sync with current URL so Google picks the right version
+    let link = document.querySelector("link[rel='canonical']")
+    if (!link) {
+      link = document.createElement('link')
+      link.setAttribute('rel', 'canonical')
+      document.head.appendChild(link)
+    }
+    link.setAttribute('href', 'https://hnb.co.in' + pathname)
+  }, [pathname])
   return null
 }
 
@@ -49,6 +60,7 @@ export default function App() {
           <Route path="/jobs" element={<JobsPage />} />
           <Route path="/franchise" element={<FranchisePage />} />
           <Route path="/data-dash" element={<DataDash />} />
+          <Route path="/socials" element={<SocialsPage />} />
         </Routes>
       </div>
       {!isDash && (

@@ -1,4 +1,17 @@
+# Dependencies
 node_modules/
+
+# Native build artifacts
+.idea/
+android/app/build/
+android/build/
+android/.gradle/
+ios/App/build/
+ios/App/Pods/
+ios/App/DerivedData/
+
+# Environment & OS
+.env
 .DS_Store
 Thumbs.db
 *.log

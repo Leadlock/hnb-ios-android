@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://hnb.co.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://hnb.co.in/services</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hnb.co.in/pricing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hnb.co.in/plans</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hnb.co.in/jobs</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://hnb.co.in/socials</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://hnb.co.in/franchise</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://hnb.co.in/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- Service pages -->
+  <url><loc>https://hnb.co.in/services/dry-cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/shoe-care</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/curtain-cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/bag-care</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/carpet-cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/mattress-cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/toy-cleaning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/wash-iron</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/wash-fold</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/steam-pressing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/commercial-laundry</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hnb.co.in/services/stroller-cleaning</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hnb.co.in/services/baby-car-seat</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>

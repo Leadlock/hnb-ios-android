@@ -1,0 +1,260 @@
+.socials-page {
+  min-height: 100vh;
+  background: var(--bg, #F8FAFC);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Hero banner ── */
+.socials-hero {
+  width: 100%;
+  background: linear-gradient(135deg, #0A1628, #1F5FFF 55%, #00C4CC);
+  padding: 96px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.socials-hero::before,
+.socials-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  pointer-events: none;
+}
+.socials-hero::before { width: 480px; height: 480px; top: -180px; right: -140px; }
+.socials-hero::after  { width: 320px; height: 320px; bottom: -120px; left: -80px; }
+
+.socials-hero h1 {
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.socials-hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Brand logo badge, top of hero ── */
+.socials-hero-logo {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.socials-hero-logo img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+/* ── Phone / email quick-contact icons, below the card stack ── */
+.socials-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 0 16px 56px;
+}
+
+.socials-contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--white, #fff);
+  border: 1px solid var(--gray-200, #E2E8F0);
+  color: var(--blue, #1F5FFF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.socials-contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.socials-contact-icon:hover {
+  background: var(--gray-50, #F8FAFC);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+}
+
+/* ── Stack of cards ── */
+.socials-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 520px;
+  padding: 32px 16px 64px;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--white, #fff);
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--gray-200, #E2E8F0);
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.social-row:first-child {
+  border-radius: 16px 16px 0 0;
+  border-top: 1px solid var(--gray-200, #E2E8F0);
+}
+.social-row:last-child {
+  border-radius: 0 0 16px 16px;
+  border-bottom: 1px solid var(--gray-200, #E2E8F0);
+}
+
+.social-row:hover {
+  background: var(--gray-50, #F8FAFC);
+}
+
+.social-row:hover .social-row-arrow {
+  transform: translateX(4px);
+  color: var(--blue, #1F5FFF);
+}
+
+/* left border accent on hover */
+.social-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--blue, #1F5FFF), var(--teal, #00C4CC));
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.social-row:first-child::before { border-radius: 16px 3px 3px 0; }
+.social-row:last-child::before  { border-radius: 0 3px 3px 16px; }
+.social-row:hover::before { opacity: 1; }
+
+.social-row-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.social-row-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.social-row-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.social-row-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-800, #1E293B);
+}
+
+.social-row-handle {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--blue, #1F5FFF);
+}
+
+.social-row-desc {
+  font-size: 0.75rem;
+  color: var(--gray-600, #475569);
+  line-height: 1.4;
+}
+
+.social-row-arrow {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--gray-400, #94A3B8);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* ── Coming-soon (non-clickable) row ── */
+.social-row-disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.social-row-disabled:hover {
+  background: var(--white, #fff);
+}
+
+.social-row-disabled:hover::before {
+  opacity: 0;
+}
+
+.social-row-badge {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gray-600, #475569);
+  background: var(--gray-100, #F1F5F9);
+  border: 1px solid var(--gray-200, #E2E8F0);
+  border-radius: 999px;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .socials-hero {
+    padding: 80px 16px 56px;
+  }
+
+  .social-row {
+    gap: 14px;
+    padding: 16px 16px;
+  }
+
+  .social-row-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .social-row-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
